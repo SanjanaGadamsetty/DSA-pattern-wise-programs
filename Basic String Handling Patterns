@@ -1,0 +1,55 @@
+### TRAVERSING A STRING USING LOOPS
+
+
+
+1. PRINT EACH CHARACTER IN A NEW LINE
+
+// Print Each char in a new line
+int main()
+{
+    char str[1000];
+    scanf("%[^\n]",str);
+    for (int i=0;str[i];i++)
+    {
+        printf("%c\n",str[i]);
+    }
+    return 0;
+}
+// Print each char in a new line(Safer version)
+int main()
+{
+    char str[1000];
+    if (fgets(str,sizeof(str),stdin)!=NULL)
+    {
+        for (int i=0;str[i];i++)
+        {
+            printf("%c\n",str[i]);
+        }
+    }
+    return 0;
+}
+
+
+
+2. FINDING STRING LENGTH
+
+// To find string length
+int main()
+{
+    char str[1000];
+    int c=0;
+    if (fgets(str,sizeof(str),stdin)!=NULL)
+    {
+        for (int i=0;str[i];i++)
+        {
+            c++;
+        }
+    }
+    printf("%d",c);
+    return 0;
+}
+
+
+
+3. COPYING ONE STRING TO ANOTHER
+
