@@ -31,7 +31,136 @@ int main()
 
 
 
-2. FINDING STRING LENGTH
+2. PRINT CHARACTERS AT EVEN/ODD POSITIONS
+
+// Chars at even/odd positions
+int main()
+{
+    char s[1000];
+    if (fgets(s,sizeof(s),stdin)!=NULL)
+    {
+        printf("Chars at even positions:\n");
+        for (int i=1;s[i];i+=2)
+        {
+            if (i%2!=0)
+            {
+                printf("%c ",s[i]);
+            }
+        }
+        printf("\nChars at odd positions:\n");
+        for (int i=0;s[i];i+=2)
+        {
+            if (i%2==0)
+            {
+                printf("%c ",s[i]);
+            }
+        }
+    }
+    return 0;
+}
+
+
+
+3. PRINT CHARACTERS AT EVEN/ODD INDICES
+
+// Chars at even/odd positions
+int main()
+{
+    char s[1000];
+    if (fgets(s,sizeof(s),stdin)!=NULL)
+    {
+        printf("Chars at odd Indices:\n");
+        for (int i=1;s[i];i+=2)
+        {
+            if (i%2!=0)
+            {
+                printf("%c ",s[i]);
+            }
+        }
+        printf("\nChars at even Indices:\n");
+        for (int i=0;s[i];i+=2)
+        {
+            if (i%2==0)
+            {
+                printf("%c ",s[i]);
+            }
+        }
+    }
+    return 0;
+}
+
+
+
+4. COUNT TOTAL CHARACTERS UNTIL '\0'
+
+// To count total characters
+int main()
+{
+    char str[1000];
+    int c=0;
+    if (fgets(str,sizeof(str),stdin)!=NULL)
+    {
+        for (int i=0;str[i];i++)
+        {
+            c++;
+        }
+    }
+    printf("%d",c);
+    return 0;
+}
+
+
+
+5. REPLACE EVERY SPACE WITH A GIVEN CHARACTER
+
+//  Replace every space with a given character
+int main()
+{
+    char s[1000];
+    char ch;
+    if (fgets(s,sizeof(s),stdin)!=NULL)
+    {
+        scanf(" %c",&ch);
+        for (int i=0;s[i];i++)
+        {
+            if (s[i]==' ')
+            {
+                s[i]=ch;
+            }
+        }
+    }
+    printf("\n%s",s);
+    return 0;
+}
+
+
+6. TOGGLE CASE
+
+// Toggle case
+int main()
+{
+    char s[1000];
+    if (fgets(s,sizeof(s),stdin)!=NULL)
+    {
+        for (int i=0;s[i];i++)
+        {
+            if (isalpha(s[i]))
+            {
+                (s[i]>='A'&&s[i]<='Z')?(s[i]=s[i]+32):(s[i]=s[i]-32);
+            }
+        }
+    }
+    printf("\n%s",s);
+    return 0;
+}
+
+
+
+### FINDING STRING LENGTH
+
+
+
+1. FINDING STRING LENGTH
 
 // To find string length
 int main()
@@ -50,6 +179,4 @@ int main()
 }
 
 
-
-3. COPYING ONE STRING TO ANOTHER
 
