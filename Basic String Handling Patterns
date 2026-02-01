@@ -184,3 +184,35 @@ int main()
 
 
 
+2. LENGTH OF STR USING WHILE LOOP
+
+// String len using while loop
+int main()
+{
+    char str[1000];
+    int i=0;
+    if (fgets(str,sizeof(str),stdin)!=NULL)
+    {
+        while (str[i]!='\0'&&str[i]!='\n')
+        {
+            i++;
+        }
+    }
+    printf("%d",i);
+    return 0;
+}
+
+
+
+3. LENGTH OF STRING IS EVEN OR ODD
+
+// Len of str is even or odd
+int main()
+{
+    char str[1000];
+    if (fgets(str,sizeof(str),stdin)!=NULL)
+    {
+        printf("%s",((strlen(str)-1)%2==0)?"Even":"Odd");
+    }
+    return 0;
+}
