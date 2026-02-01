@@ -207,12 +207,143 @@ int main()
 3. LENGTH OF STRING IS EVEN OR ODD
 
 // Len of str is even or odd
+int count(char str[])
+{
+    int len=0;
+    for (int i=0;str[i]!='\n';i++) len++;
+    return len;
+}
 int main()
 {
     char str[1000];
     if (fgets(str,sizeof(str),stdin)!=NULL)
     {
-        printf("%s",((strlen(str)-1)%2==0)?"Even":"Odd");
+        printf("%s",(count(str)%2==0)?"Even":"Odd");
     }
     return 0;
 }
+
+
+
+4. LENGTH OF STRING EXCLUDING SPACES
+
+// Length excluding spaces
+int main()
+{
+    char str[1000];
+    int len=0;
+    fgets(str,sizeof(str),stdin);
+    for (int i=0;str[i];i++)
+    {
+        if (str[i]!=' ' && str[i]!='\n')
+        {
+            len++;
+        }
+    }
+    printf("%d",len);
+    return 0;
+}
+
+
+
+5. FIND LENGTH UNTIL SPECIFIC CHARACTER OCCURS
+
+// To find length until a character occurs
+int main()
+{
+    char str[1000];
+    fgets(str,sizeof(str),stdin);
+    char ch;
+    scanf(" %c",&ch);
+    int len=0;
+    for (int i=0;str[i]!='\n' && str[i]!='\0';i++)
+    {
+        if (str[i]==ch)
+        {
+            break;
+        }
+        len++;
+    }
+    printf("%d",len);
+    return 0;
+}
+
+
+
+#############################################################################################################################################################################
+TRAVERSING A STRING USING LOOPS
+#############################################################################################################################################################################
+
+
+
+1. COPY ONE STRING TO ANOTHER CHARACTER BY CHARACTER
+
+// Copy one string to another character by character
+int main()
+{
+    char str1[1000],str2[1000];
+    fgets(str1,sizeof(str1),stdin);
+    for (int i=0;str1[i];i++)
+    {
+        str2[i]=str1[i];
+    }
+    str2[strlen(str1)-1]='\0';
+    printf("%s",str2);
+    return 0;
+}
+
+
+
+2. COPY REVERSE OF A STRING
+
+// Copy reverse of a string
+int main()
+{
+    char s1[1000],s2[1000];
+    fgets(s1,sizeof(s1),stdin);
+    int len=strlen(s1);
+    for (int i=0;i<len-1;i++)
+    {
+        s2[i]=s1[len-i-2];
+    }
+    s2[len-1]='\0';
+    printf("%s",s2);
+    return 0;
+}
+
+
+
+3. COPY ONLY VOWELS/CONSONANTS
+
+// To copy only vowels/consonants
+int main()
+{
+    char s1[1000],vowels[1000],consonants[1000];
+    int i=0,j=0,k=0;
+    fgets(s1,sizeof(s1),stdin);
+    while (s1[i]!='\n' && s1[i]!='\0')
+    {
+        if (isalpha(s1[i]))
+        {
+            char ch=tolower(s1[i]);
+            if (ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u')
+            {
+                vowels[j++]=s1[i];
+            }
+            else
+            {
+                consonants[k++]=s1[i];
+            }
+        }
+        i++;
+    }
+    vowels[j]='\0';
+    consonants[k]='\0';
+    printf("Vowels: %s\nConsonants: %s",vowels,consonants);
+    return 0;
+}
+
+
+
+4. TO COPY CHARACTERS ONLY AT THE ODD/EVEN POITIONS
+
