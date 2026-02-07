@@ -491,3 +491,28 @@ int main()
 
 4. CHECK IF A STRING IS A PREFIX OF THE ANOTHER STRING
 
+// Check if one string is a prefix of the other
+
+int main()
+{
+    char s1[1000],s2[1000];
+    fgets(s1,sizeof(s1),stdin);
+    fgets(s2,sizeof(s2),stdin);
+    s1[strcspn(s1,"\n")]='\0';
+    s2[strcspn(s2,"\n")]='\0';
+    for (int i=0;i<(strlen(s1)<strlen(s2)?strlen(s1):strlen(s2));i++)
+    {
+        if (s1[i]!=s2[i])
+        {
+            printf("no");
+            return 0;
+        }
+    }
+    printf("yes");
+    return 0;
+}
+
+
+
+5. COMPARE 2 STRINGS LEXICOGRAPHICALLY
+
