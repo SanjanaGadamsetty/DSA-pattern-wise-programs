@@ -428,10 +428,66 @@ int main()
 
 
 #############################################################################################################################################################################
-**COMPARING 2 STRINGS**
+COMPARING 2 STRINGS
 #############################################################################################################################################################################
 
 
 
 1. CHECK FOR EXACT EQUATLITY
+
+// Check for exact equality
+
+int main()
+{
+    char str1[1000],str2[1000];
+    scanf("%s",str1);
+    scanf("%s",str2);
+    printf("%s",(strcmp(str1,str2)==0)?"YES":"NO");
+    return 0;
+}
+
+
+
+2. TO CHECK WHICH STRING IS LONGER
+
+// To check which string is longer
+
+int main()
+{
+    char s1[1000],s2[1000];
+    fgets(s1,1000,stdin);
+    fgets(s2,1000,stdin);
+    s1[strcspn(s1,"\n")]='\0';
+    s2[strcspn(s2,"\n")]='\0';
+    printf("%s",strlen(s1)>strlen(s2)?s1:strlen(s1)<strlen(s2)?s2:"Both are equal length");
+    return 0;
+}
+
+
+
+3. CHECK IF 2 STRINGS ARE SAME OR NOT IGNORING THE CASE
+
+// To check if 2 strings are same ignoring the case
+
+int main()
+{
+    char s1[1000],s2[1000];
+    fgets(s1,sizeof(s1),stdin);
+    fgets(s2,sizeof(s2),stdin);
+    s1[strcspn(s1,"\n")]='\0';
+    s2[strcspn(s2,"\n")]='\0';
+    if(strcasecmp(s1,s2)==0)
+    {
+        printf("Strings are same ignoring the case\n");
+    }
+    else
+    {
+        printf("Strings are different\n");
+    }
+    return 0;
+}
+
+
+
+4. CHECK IF A STRING IS A PREFIX OF THE ANOTHER STRING
 
