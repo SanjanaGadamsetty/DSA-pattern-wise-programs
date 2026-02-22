@@ -4,6 +4,35 @@ REVERSE STRING
 
 
 
+1. REVERSE A STRING IN-PLACE USING 2-POINTERS
+
+// Reverse in-place using 2-pointers
+void reverse(char str[],int len){
+    int start=0,end=len-1;
+    while (start<end){
+        int temp=str[start];
+        str[start]=str[end];
+        str[end]=temp;
+        start++; end--;
+    }    
+    printf("Reversed string: %s",str);
+    return;
+}
+int main(){
+    char str[1000];
+    scanf("%s",str);
+    int len=strlen(str);
+    reverse(str,len);
+    return 0;
+}
+
+
+
+2. REVERSE ONLY ALPHABETIC CHARACTERS, KEEPING DIGITS IN-PLACE
+
+
+
+
 ##################################################################################################################################################################################
 CHECK PALINDROME
 ##################################################################################################################################################################################
