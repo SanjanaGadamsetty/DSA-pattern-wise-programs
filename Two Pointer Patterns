@@ -30,6 +30,41 @@ int main(){
 
 2. REVERSE ONLY ALPHABETIC CHARACTERS, KEEPING DIGITS IN-PLACE
 
+// Reverse only alphabetic characters in a string, keeping digits in-place
+
+void reverse_alpha(char *str){
+    int left=0,right=strlen(str)-1;
+    while (left<right){
+        if (!isalpha(str[left])){
+            left++;
+        }
+        else if(!isalpha(str[right])){
+            right--;
+        }
+        else{
+            char temp=str[left];
+            str[left]=str[right];
+            str[right]=temp;
+            left++;
+            right--;
+        }
+    }
+    printf("%s",str);
+    return;
+}
+int main(){
+    char str[1000];
+    fgets(str,1000,stdin);
+    str[strlen(str)-1]='\0';
+    reverse_alpha(str);
+    return 0;
+}
+
+
+
+3. REVERSE CHARACTERS BETWEEN 2 GIVEN INDICES
+
+
 
 
 
